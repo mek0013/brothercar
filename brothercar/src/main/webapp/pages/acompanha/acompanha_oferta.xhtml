@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/templates/template.xhtml">
+	<ui:define name="content">
+
+		<h:form id="formAcomOfertas">
+			<h2>Acompanha Ofertas</h2>
+			<p:separator />
+			<br />
+			<h:panelGrid>
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+			</h:panelGrid>
+			<br />
+			<p:dataTable id="tableOferta" var="pedido"
+				value="#{acomOferta.pedidos}"
+				rendered="#{acomOferta.pedidos != null}"
+				emptyMessage="Nenhum resultado encontrado."
+				resizableColumns="true">
+
+				<p:column headerText="Passageiro">
+					<h:outputText value="#{pedido.usuario.nome}" />
+				</p:column>
+				<p:column headerText="Ponto de Encontro">
+					<h:outputText value="#{pedido.pontoEscolhido}" />
+				</p:column>
+				<p:column headerText="Data e Hora da Saida">
+					<h:outputText value="#{pedido.ofertas.dataHoraDeSaida}" />
+				</p:column>
+				<p:column style="width: 55px; text-align: center" resizable="false"
+					headerText="Aceitar">
+					<p:commandButton ajax="false" title="Aceitar" style="color:#00FF00" action="#{atualizaUsuario.preparaAtualizar(usuario)}" />
+				</p:column>
+				<p:column style="width: 55px; text-align: center" resizable="false"
+					headerText="Recusar">
+					<p:commandButton ajax="false" title="Recusar" style="color:#FF0000" action="#{atualizaUsuario.preparaAtualizar(usuario)}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

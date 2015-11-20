@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/templates/template.xhtml">
+	<ui:define name="content">
+
+		<h:form id="formAcomPedidos">
+			<h2>Acompanha Pedidos</h2>
+			<p:separator />
+			<br />
+			<h:panelGrid>
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+			</h:panelGrid>
+			<br />
+			<p:dataTable id="tablePedidos" var="pedido"
+				value="#{acomPedido.pedidos}"
+				rendered="#{acomPedido.pedidos != null}"
+				emptyMessage="Nenhum resultado encontrado."
+				resizableColumns="true">
+
+				<p:column headerText="Motorista">
+					<h:outputText value="#{pedido.ofertas.carona.usuario.nome}" />
+				</p:column>
+				<p:column headerText="Ponto de Encontro">
+					<h:outputText value="#{pedido.pontoEscolhido}" />
+				</p:column>
+				<p:column headerText="Data e Hora da Saida">
+					<h:outputText value="#{pedido.ofertas.dataHoraDeSaida}" />
+				</p:column>
+				<p:column style="width: 55px; text-align: center" resizable="false"
+					headerText="Status do pedido">
+					<p:outputLabel value="#{pedido.statusDoPedido}"></p:outputLabel>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

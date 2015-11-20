@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/templates/template.xhtml">
+	<ui:define name="content">
+
+		<h:form id="formPedirCarona">
+			<h2>Solicitar Carona</h2>
+			<p:separator />
+			<br />
+			<h:panelGrid>
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+			</h:panelGrid>
+			<h:panelGrid>
+				<p:dataTable id="tableOfertas" var="oferta"
+					value="#{pedirCarona.ofertas}"
+					emptyMessage="Nenhuma carona encontrada"
+					filteredValue="#{pedirCarona.filteredOfertas}"
+					rendered="#{pedirCarona.ofertas != null}">
+
+					<p:columnGroup type="header">
+						<p:row>
+							<p:column filterBy="#{oferta.carona.usuario.nome}"
+								filterMatchMode="contains" rowspan="2" headerText="Motorista" />
+							<p:column colspan="4" headerText="Pontos de Parada/Data e Hora" />
+						</p:row>
+						<p:row>
+							<p:column headerText="Logradouro" />
+							<p:column headerText="Referencia" />
+							<p:column headerText="Data e Hora" />
+							<p:column headerText="Pedir"/>
+						</p:row>
+					</p:columnGroup>
+
+					<p:subTable var="ponto"
+						value="#{oferta.carona.pontosParada}">
+						<f:facet name="header">
+							<h:outputText value="#{oferta.carona.usuario.nome}" />
+						</f:facet>
+
+						<p:column>
+							<h:outputText value="#{oferta.carona.nomeTrajeto}" />
+						</p:column>
+						<p:column>
+							<h:outputText value="#{ponto.logradouro}" />
+						</p:column>
+						<p:column>
+							<h:outputText value="#{ponto.referencia}" />
+						</p:column>
+						<p:column>
+							<h:outputText value="#{oferta.dataHoraDeSaida}" />
+						</p:column>
+						<p:column style="width: 55px; text-align: center"
+							resizable="false" headerText="Pedir">
+							<p:commandButton icon="ui-icon-disk" ajax="false"
+								title="Pedir" action="#{pedirCarona.salvar(oferta,ponto)}" />
+						</p:column>
+					</p:subTable>
+				</p:dataTable>
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
