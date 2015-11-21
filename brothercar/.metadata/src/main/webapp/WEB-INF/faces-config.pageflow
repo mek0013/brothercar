@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14315320747980" configfile="/brothercar/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/cadUsuario.xhtml" x="986" y="764" id="pf143627613990011" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14428775961562" inlinks="pf14431216353300" path="/pages/usuario/cadUsuario.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/atualizaUsuario.xhtml" x="554" y="178" id="pf143627613990017" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf14434834173980 pf14449346510032" inlinks="pf14477171998150" path="/pages/usuario/atualizaUsuario.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.xhtml" x="770" y="764" id="pf143627618746719" referenceLink="//@navigationRule.4/@navigationCase.1/@toViewId|" outlinks="pf14431216353311 pf14431216353300 pf14441573635641" inlinks="pf14428775961562 pf14431216353311 pf14434834173980" path="/pages/login/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.xhtml" x="122" y="178" id="pf14429526532156" referenceLink="//@navigationRule.0/@fromViewId|" path="/pages/login/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/principal/principal.xhtml" x="338" y="562" id="pf14441573635642" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14441573635641 pf14458832985551 pf14459552785220" path="/pages/principal/principal.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/principal/principal.xhtm" x="770" y="178" id="pf14449343730781" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14449346510032" path="/pages/principal/principal.xhtm"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/oferta/cadTrajetos.xhtml" x="554" y="562" id="pf14458832985552" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14458832985551" inlinks="pf14477171998154" path="/pages/oferta/cadTrajetos.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="562" id="pf14459552785221" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14459552785220 pf14477171998155 pf14477171998156 pf14477171998154 pf14477171998150 pf14480372381580" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/oferta/pedirCarona.xhtml" id="pf14477171998157" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14477171998155" path="/pages/oferta/pedirCarona.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/oferta/ofertaCarona.xhtml" id="pf14477171998158" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf14477171998156" path="/pages/oferta/ofertaCarona.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="pages/acompanha/acompanha_oferta.xhtml" id="pf14480372381581" referenceLink="//@navigationRule.1/@navigationCase.3/@toViewId|" inlinks="pf14480372381580" path="/pages/acompanha/acompanha_oferta.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/cadUsuario.xhtml" x="770" y="946" id="pf143627613990011" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" outlinks="pf14428775961562" inlinks="pf14480642245690" path="/pages/usuario/cadUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/atualizaUsuario.xhtml" x="338" y="946" id="pf143627613990017" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf14434834173980 pf14449346510032" inlinks="pf14477171998150" path="/pages/usuario/atualizaUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.xhtml" x="554" y="946" id="pf143627618746719" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" outlinks="pf14480642245691 pf14480642245692 pf14480642245690" inlinks="pf14428775961562 pf14434834173980 pf14480642245692 pf14480642245703" path="/pages/login/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/login/login.xhtml" x="122" y="562" id="pf14429526532156" referenceLink="//@navigationRule.0/@fromViewId|" path="/pages/login/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/principal/principal.xhtml" x="770" y="1714" id="pf14441573635642" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14458832985551 pf14459552785220 pf14480642245691" path="/pages/principal/principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/principal/principal.xhtm" x="554" y="1330" id="pf14449343730781" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14449346510032" path="/pages/principal/principal.xhtm"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/oferta/cadTrajetos.xhtml" x="554" y="1714" id="pf14458832985552" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14458832985551" path="/pages/oferta/cadTrajetos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="1330" id="pf14459552785221" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14459552785220 pf14477171998155 pf14477171998156 pf14477171998150 pf14480372381580 pf14480642245704 pf14480642245703" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/oferta/pedirCarona.xhtml" x="338" y="178" id="pf14477171998157" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf14477171998155" path="/pages/oferta/pedirCarona.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/oferta/ofertaCarona.xhtml" x="338" y="562" id="pf14477171998158" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" inlinks="pf14477171998156" path="/pages/oferta/ofertaCarona.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/acompanha/acompanha_oferta.xhtml" x="338" y="1330" id="pf14480372381581" referenceLink="//@navigationRule.1/@navigationCase.3/@toViewId|" inlinks="pf14480372381580" path="/pages/acompanha/acompanha_oferta.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/acompanha/acompanha_pedido.xhtml" x="338" y="1714" id="pf14480642245705" referenceLink="//@navigationRule.1/@navigationCase.4/@toViewId|" inlinks="pf14480642245704" path="/pages/acompanha/acompanha_pedido.xhtml"/>
   <links id="pf14428775961562" target="pf143627618746719" source="pf143627613990011" outcome="sucesso"/>
-  <links id="pf14431216353300" target="pf143627613990011" source="pf143627618746719" outcome="cadastro"/>
   <links id="pf14434834173980" target="pf143627618746719" source="pf143627613990017" outcome="excluir"/>
-  <links id="pf14441573635641" target="pf14441573635642" source="pf143627618746719" outcome="sucesso"/>
   <links id="pf14449346510032" target="pf14449343730781" source="pf143627613990017" outcome="sucesso"/>
   <links id="pf14458832985551" target="pf14441573635642" source="pf14458832985552" outcome="fracasso"/>
   <links id="pf14459552785220" target="pf14441573635642" source="pf14459552785221" outcome="sucesso"/>
-  <links id="pf14431216353311" target="pf143627618746719" source="pf143627618746719" outcome="fracasso">
-    <bendPoints d1Height="-36" d2Height="-36"/>
-    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
-    <bendPoints d1Width="-64" d2Width="-64"/>
-  </links>
   <links id="pf14477171998155" target="pf14477171998157" source="pf14459552785221" outcome="pedir"/>
   <links id="pf14477171998156" target="pf14477171998158" source="pf14459552785221" outcome="ofertar"/>
-  <links id="pf14477171998154" target="pf14458832985552" source="pf14459552785221" outcome="acompanhaPedido"/>
   <links id="pf14477171998150" target="pf143627613990017" source="pf14459552785221" outcome="atualiza"/>
   <links id="pf14480372381580" target="pf14480372381581" source="pf14459552785221" outcome="acompanhaOferta"/>
+  <links id="pf14480642245704" target="pf14480642245705" source="pf14459552785221" outcome="acompanhaPedido"/>
+  <links id="pf14480642245691" target="pf14441573635642" source="pf143627618746719" outcome="sucesso"/>
+  <links id="pf14480642245692" target="pf143627618746719" source="pf143627618746719" outcome="fracasso"/>
+  <links id="pf14480642245690" target="pf143627613990011" source="pf143627618746719" outcome="cadastro"/>
+  <links id="pf14480642245703" target="pf143627618746719" source="pf14459552785221" outcome="sair"/>
 </pageflow:Pageflow>

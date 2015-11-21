@@ -32,6 +32,10 @@
 			<to-view-id>/pages/principal/principal.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>sair</from-outcome>
+			<to-view-id>/pages/login/login.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>pedir</from-outcome>
 			<to-view-id>/pages/oferta/pedirCarona.xhtml</to-view-id>
 		</navigation-case>

@@ -12,6 +12,7 @@ public class Navigation {
 	public static final String CADASTRO = "cadastro";
 	public static final String ATUALIZA = "atualiza";
 	public static final String EXCLUIR = "excluir";
+	public static final String SAIR = "sair";
 	
 	public static final String SOLICITAR = "solicitar";
 	public static final String OFERTA = "ofertar";

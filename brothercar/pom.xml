@@ -173,6 +173,11 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.0-b01</version>
+		</dependency>
 
 		<!-- Test Dependencies -->
 		<dependency>
