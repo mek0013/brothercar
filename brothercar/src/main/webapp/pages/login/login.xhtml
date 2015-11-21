@@ -10,7 +10,6 @@
 
 			<p:messages id="messages" showDetail="true" autoUpdate="true"
 				closable="true" />
-
 			<h:panelGrid columns="3" styleClass="panelgridlogin">
 				
 				<h:outputLabel value="Matricula:" />
@@ -23,9 +22,9 @@
 					required="true" requiredMessage="Campo Obrigatório" />
 				<p:message for="senha" />
 
-				<p:commandButton value="Entrar" action="#{login.loggar}"
+				<p:commandButton value="VAMOS" action="#{login.loggar}"
 					ajax="false" />
-				<p:commandLink value="Cadastrar-se" ajax="false" immediate="true" action="#{login.preparaCadastro}" />
+				<p:commandLink value="Novo na comunidade?" ajax="false" immediate="true" action="#{login.preparaCadastro}" />
 				<p:outputLabel value=""/>
 			</h:panelGrid>
 		</h:form>
