@@ -12,7 +12,7 @@ a {
 
 #header {
 	height: 120px;
-	border-bottom: 3px solid #c0c0c0;
+	border-bottom: 2px solid #008000;
 	background: #ffffff;
 	text-align: center;
 	color: #1a1a1a;
@@ -22,9 +22,10 @@ a {
 
 #header h1 {
 	line-height: 115px;
-	font-size: 44px;
+	font-size: 66px;
 	letter-spacing: -2px;
 	margin-top: 0;
+	text-shadow: #000 2px 3px 2px;
 }
 
 .ui-selectonemenu {
@@ -152,9 +153,16 @@ a {
 	margin: 5 auto;
 }
 
+.panelgridloginbutton {
+	margin-top: 15px;
+    margin-bottom: 0px;
+    margin-right: 340px;
+    margin-left: 340px;
+}
+
 .panelgridlogin {
 	margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 15px;
     margin-right: 340px;
     margin-left: 340px;
 }
@@ -162,7 +170,7 @@ a {
 .panelgrid input[type=text], .panelgrid input[type=password] {
 	padding: 4px;
 	margin-bottom: 1px;
-	width: 191px;
+	width: 195px;
 }
 
 .ui-dialog-content input {

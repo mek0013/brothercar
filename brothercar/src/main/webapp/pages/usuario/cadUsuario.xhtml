@@ -15,7 +15,7 @@
 				<p:messages id="messages" showDetail="true" autoUpdate="true"
 					closable="true" />
 			</h:panelGrid>
-			<h:panelGrid id="gridUser" columns="4" styleClass="panelgrid">
+			<h:panelGrid id="gridUser" columns="4" styleClass="panelgridloginbutton">
 				<p:outputLabel value="Nome: " />
 				<font color="red">*</font>
 				<p:inputText id="nome" value="#{cadUsuario.nome}" required="true"
@@ -42,8 +42,7 @@
 					strongLabel="Forte" />
 				<p:message for="senha" />
 			</h:panelGrid>
-			<br />
-			<h:panelGrid columns="3" styleClass="panelgrid">
+			<h:panelGrid columns="3" styleClass="panelgridloginbutton">
 				<p:commandButton value="Voltar"
 					action="#{listUsuario.preparaListar}" ajax="false"
 					immediate="true" />
