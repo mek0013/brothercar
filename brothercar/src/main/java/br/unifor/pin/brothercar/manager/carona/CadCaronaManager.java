@@ -29,7 +29,7 @@ public class CadCaronaManager {
 	@Autowired
 	private SegurancaTO segurancaTO;
 
-	private List<PontoParada> listPontos = new ArrayList<PontoParada>();
+	private List<PontoParada> listPontos;
 	private PontoParada pontoParada;
 	private String nomeTrajeto;
 	private String logradouro;
@@ -57,21 +57,27 @@ public class CadCaronaManager {
 	}
 
 	public String preparaOferta() {
+		listPontos = new ArrayList<PontoParada>();
 		return Navigation.OFERTA;
 	}
 
 	public void addPontos() {
-		
-		if (listPontos.size() <= 4 || listPontos.isEmpty()) {
 			pontoParada = new PontoParada();
 			pontoParada.setLogradouro(logradouro);
 			pontoParada.setReferencia(referencia);
-			listPontos.add(pontoParada);
-			addPontos = true;
-		} else {
-			addPontos = false;
-		}
-		limparDados();
+			if (this.listPontos.size() <=3) {
+				if (this.listPontos.size() == 3) {
+					this.listPontos.add(pontoParada);
+					addPontos = false;
+				} else {
+					this.listPontos.add(pontoParada);
+					addPontos = true;
+				}
+			}else if (this.listPontos.isEmpty()) {
+				this.listPontos.add(pontoParada);
+				addPontos = true;
+			}
+			limparDados();
 	}
 
 	private void limparDados() {

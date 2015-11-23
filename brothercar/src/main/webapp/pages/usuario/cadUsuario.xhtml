@@ -3,55 +3,57 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui" template="/templates/template_login.xhtml">
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/template_login.xhtml">
 	<ui:define name="content">
 
 		<h:form id="formCadUsuario">
-		<f:validateBean >
-			<h2>Cadastro de Usuários</h2>
-			<p:separator />
-			<br />
-			<h:panelGrid>
-				<p:messages id="messages" showDetail="true" autoUpdate="true"
-					closable="true" />
-			</h:panelGrid>
-			<h:panelGrid id="gridUser" columns="4" styleClass="panelgridloginbutton">
-				<p:outputLabel value="Nome: " />
-				<font color="red">*</font>
-				<p:inputText id="nome" value="#{cadUsuario.nome}" required="true"
-					requiredMessage="Campo Obrigatório" />
-				<p:message for="nome" />
+			<f:validateBean>
+				<h2>Cadastro de Usuários</h2>
+				<p:separator />
+				<br />
+				<h:panelGrid>
+					<p:messages id="messages" showDetail="true" autoUpdate="true"
+						closable="true" />
+				</h:panelGrid>
+				<h:panelGrid id="gridUser" columns="4"
+					styleClass="panelgridloginbutton">
+					<p:outputLabel value="Nome: " />
+					<font color="red">*</font>
+					<p:inputMask id="nome" value="#{cadUsuario.nome}" required="true"
+						requiredMessage="Campo Obrigatório" mask="aaaaaaaaaaaaa" />
+					<p:message for="nome" />
 
-				<p:outputLabel value="Email: " />
-				<font color="red">*</font>
-				<p:inputText id="email" value="#{cadUsuario.email}" required="true"
-					requiredMessage="Campo Obrigatório" />
-				<p:message for="email" />
-				
-				<p:outputLabel value="Matricula: " />
-				<font color="red">*</font>
-				<p:inputText id="matricula" value="#{cadUsuario.matricula}" required="true"
-					requiredMessage="Campo Obrigatório" />
-				<p:message for="matricula" />
+					<p:outputLabel value="Email: " />
+					<font color="red">*</font>
+					<p:inputText id="email" value="#{cadUsuario.email}" required="true"
+						requiredMessage="Campo Obrigatório" />
+					<p:message for="email" />
 
-				<p:outputLabel value="Senha: " />
-				<font color="red">*</font>
-				<p:password id="senha" value="#{cadUsuario.senha}" required="true"
-					requiredMessage="Campo Obrigatório" feedback="true"
-					promptLabel="Insira uma senha" weakLabel="Fraco" goodLabel="Bom"
-					strongLabel="Forte" />
-				<p:message for="senha" />
-			</h:panelGrid>
-			<h:panelGrid columns="3" styleClass="panelgridloginbutton">
-				<p:commandButton value="Voltar"
-					action="#{listUsuario.preparaListar}" ajax="false"
-					immediate="true" />
-				<p:commandButton value="Salvar" action="#{cadUsuario.salvar}"
-					ajax="false" />
-				<p:commandButton value="Limpar"
-					actionListener="#{cadUsuario.limpaDados}" update="@form"
-					type="reset" />
-			</h:panelGrid>
+					<p:outputLabel value="Matricula: " />
+					<font color="red">*</font>
+					<p:inputText id="matricula" value="#{cadUsuario.matricula}"
+						required="true" requiredMessage="Campo Obrigatório" />
+					<p:message for="matricula" />
+
+					<p:outputLabel value="Senha: " />
+					<font color="red">*</font>
+					<p:password id="senha" value="#{cadUsuario.senha}" required="true"
+						requiredMessage="Campo Obrigatório" feedback="true"
+						promptLabel="Insira uma senha" weakLabel="Fraco" goodLabel="Bom"
+						strongLabel="Forte" />
+					<p:message for="senha" />
+				</h:panelGrid>
+				<h:panelGrid columns="3" styleClass="panelgridloginbutton">
+					<p:commandButton value="Voltar"
+						action="#{listUsuario.preparaListar}" ajax="false"
+						immediate="true" />
+					<p:commandButton value="Salvar" action="#{cadUsuario.salvar}"
+						ajax="false" />
+					<p:commandButton value="Limpar"
+						actionListener="#{cadUsuario.limpaDados}" update="@form"
+						type="reset" />
+				</h:panelGrid>
 			</f:validateBean>
 		</h:form>
 	</ui:define>

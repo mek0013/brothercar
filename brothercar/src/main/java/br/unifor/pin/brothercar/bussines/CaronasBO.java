@@ -30,7 +30,7 @@ public class CaronasBO {
 	@Autowired
 	private SegurancaTO segurancaTO;
 	
-	public void salvarCarona(Caronas carona, List<PontoParada> pontos, Ofertas oferta) throws BOException{
+	public void salvarCarona(Caronas carona,List<PontoParada> pontos,Ofertas oferta) throws BOException{
 		
 		carona.setUsuario(segurancaTO.getUsuario());
 		caronasDAO.salvar(carona);

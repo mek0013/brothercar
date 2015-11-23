@@ -20,8 +20,6 @@ public class CadUsuarioManager {
 
 	@Autowired
 	private UsuarioBO usuarioBO;
-	@Autowired
-	private ListUsuarioManager listUsuario;
 	private String nome;
 	private String email;
 	private String senha;
