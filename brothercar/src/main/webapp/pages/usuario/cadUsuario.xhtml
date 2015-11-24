@@ -20,7 +20,7 @@
 					styleClass="panelgridloginbutton">
 					<p:outputLabel value="Nome: " />
 					<font color="red">*</font>
-					<p:inputMask id="nome" value="#{cadUsuario.nome}" required="true"
+					<p:inputText id="nome" value="#{cadUsuario.nome}" required="true"
 						requiredMessage="Campo Obrigatório" mask="aaaaaaaaaaaaa" />
 					<p:message for="nome" />
 
@@ -41,7 +41,15 @@
 					<p:password id="senha" value="#{cadUsuario.senha}" required="true"
 						requiredMessage="Campo Obrigatório" feedback="true"
 						promptLabel="Insira uma senha" weakLabel="Fraco" goodLabel="Bom"
-						strongLabel="Forte" />
+						strongLabel="Forte" match="confirmaSenha" />
+					<p:message for="senha" />
+					
+					<p:outputLabel value="Confirma Senha: " />
+					<font color="red">*</font>
+					<p:password id="confirmaSenha" value="#{cadUsuario.senha}" required="true"
+						requiredMessage="Campo Obrigatório" feedback="true"
+						promptLabel="Insira uma senha" weakLabel="Fraco" goodLabel="Bom"
+						strongLabel="Forte" validatorMessage="Confirmação de senha incorreta!"/>
 					<p:message for="senha" />
 				</h:panelGrid>
 				<h:panelGrid columns="3" styleClass="panelgridloginbutton">

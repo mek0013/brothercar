@@ -34,6 +34,7 @@ public class UsuarioDAOTest {
 		Assert.assertNotNull(usuario.getId());
 		System.out.println(usuario.getId());
 		
+		
 	}
 	
 	@Test
