@@ -18,8 +18,7 @@
 			<p:dataTable id="tablePedidos" var="pedido"
 				value="#{acomPedido.pedidos}"
 				rendered="#{acomPedido.pedidos != null}"
-				emptyMessage="Nenhum resultado encontrado."
-				resizableColumns="true">
+				emptyMessage="Nenhum resultado encontrado." resizableColumns="true">
 
 				<p:column headerText="Motorista">
 					<h:outputText value="#{pedido.ofertas.carona.usuario.nome}" />
@@ -32,7 +31,8 @@
 				</p:column>
 				<p:column style="width: 55px; text-align: center" resizable="false"
 					headerText="Status do pedido">
-					<p:outputLabel value="#{pedido.statusDoPedido}"></p:outputLabel>
+					<h:outputText rendered="#{pedido.statusDoPedido == true}" value="Aceito" style="color: #00FF00;"/>
+					<h:outputText rendered="#{pedido.statusDoPedido == false}" value="Recuso" style="color: #FF0000"/>
 				</p:column>
 			</p:dataTable>
 		</h:form>
