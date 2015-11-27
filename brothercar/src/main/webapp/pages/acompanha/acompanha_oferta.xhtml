@@ -30,13 +30,13 @@
 				<p:column headerText="Data e Hora da Saida">
 					<h:outputText value="#{pedido.ofertas.dataHoraDeSaida}" />
 				</p:column>
-				<p:column style="width: 55px; text-align: center" resizable="false"
+				<p:column style="width: 75px; text-align: center" resizable="false"
 					headerText="Aceitar">
-					<p:commandButton ajax="false" title="Aceitar" style="color:#00FF00" action="#{atualizaUsuario.preparaAtualizar(usuario)}" />
+					<p:commandButton ajax="false" title="Aceitar" value="Aceitar" style="background-color:#00FF00" action="#{acomOferta.aceitar(pedido)}" />
 				</p:column>
-				<p:column style="width: 55px; text-align: center" resizable="false"
+				<p:column style="width: 75px; text-align: center" resizable="false"
 					headerText="Recusar">
-					<p:commandButton ajax="false" title="Recusar" style="color:#FF0000" action="#{atualizaUsuario.preparaAtualizar(usuario)}" />
+					<p:commandButton ajax="false" title="Recusar" value="Recusar" style="background-color:#FF0000" action="#{atualizaUsuario.preparaAtualizar(usuario)}" />
 				</p:column>
 			</p:dataTable>
 		</h:form>

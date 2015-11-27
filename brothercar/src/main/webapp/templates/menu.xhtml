@@ -1,35 +1,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<h:form xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
-<f:view>
-	<h:form>
-		<h:panelGroup id="menu">
-			<p:menubar>
-				<p:submenu label="Carona">
-					<p:menuitem value="Ofertar Carona"
-						action="#{cadCarona.preparaOferta}" />
-					<p:menuitem value="Solicitar Carona"
-						action="#{pedirCarona.preparaPedir}" />
-				</p:submenu>
-				<p:submenu label="Acompanhar">
-					<p:menuitem value="Acompanha Oferta"
-						action="#{acomOferta.preparaAcompanhaOferta}" />
-					<p:menuitem value="Acompanha Pedidos"
-						action="#{acomPedido.preparaAcompanhaPedido}" />
-				</p:submenu>
-				<p:submenu label="Meu Cadastro">
-					<p:menuitem value="Altera Cadastro"
-						action="#{principal.preparaAtualizarUser}" />
-						<p:menuitem value="Sair"
-						action="#{segurancaTO.logout}" />
-				</p:submenu>
-			</p:menubar>
-		</h:panelGroup>
-	</h:form>
-</f:view>
-</html>
+
+	<nav class="bootstrap-navbar navbar navbar-default">
+	<div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="bootstrap-menu collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<h:panelGroup>
+					<li><h:commandLink value="Oferta Carona"
+							action="#{OfertarCarona.preparaOferta}" ajax="false" /></li>
+					<li><h:commandLink value="Solicitar Carona"
+							action="#{pedirCarona.preparaPedir}" ajax="false" /></li>
+				</h:panelGroup>
+				<h:panelGroup>
+					<li class="dropdown"><a onmouseover="this.click()"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Acompanhar <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><h:commandLink value="Acompanhar Oferta"
+									action="#{acomOferta.preparaAcompanhaOferta}" ajax="false" />
+							</li>
+							<li><h:commandLink value="Acompanhar Pedido"
+									action="#{acomPedido.preparaAcompanhaPedido}" ajax="false" />
+							</li>
+						</ul></li>
+				</h:panelGroup>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right text-left">
+				<h:panelGroup>
+					<li class="dropdown"><a onmouseover="this.click()"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false"><h:outputText
+								value="#{segurancaTO.usuario.nome}" style="font-size: 10pt;"
+								styleClass="italic" /></a>
+						<ul class="dropdown-menu">
+							<li><h:commandLink value="Alterar Cadastro"
+									action="#{principal.preparaAtualizarUser}" ajax="false" /></li>
+							<li><h:commandLink value="Sair"
+									action="#{segurancaTO.logout}" ajax="false" /></li>
+						</ul></li>
+				</h:panelGroup>
+
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid --> </nav>
+</h:form>

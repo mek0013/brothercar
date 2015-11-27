@@ -12,36 +12,42 @@
 				<p:separator />
 				<br />
 
-				<h:panelGrid style="margin-right: 110px;margin-left: 110px;">
-					<p:messages id="messages" showDetail="true" autoUpdate="true"
-						closable="true" />
-					<p:wizard backLabel="Anterior" nextLabel="Proximo"
-						style="width:700px;">
-						<p:tab id="cadTrajeto" title="Trajeto">
-							<p:panel header="Trajeto e Pontos de Parada">
-								<p:messages />
-								<h:panelGrid id="gridTrajetos" columns="3">
+				<div class="container-fluid">
+					<div id="tabbable">
+						<ul class="nav nav-pills nav-justified" role="tablist">
+							<li role="presentation"><a href="#tab1" data-toggle="tab">Cadastra
+									Trajeto</a></li>
+							<li role="presentation"><a href="#tab2" data-toggle="tab">Ofertar
+									Carona</a></li>
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+								<h:panelGrid id="gridTrajetos" columns="4" styleClass="panelgrid">
 									<p:outputLabel value="Nome do Trajeto: " />
 									<font color="red">*</font>
-									<p:inputText id="nomeTrajeto" value="#{cadCarona.nomeTrajeto}"
-										required="true" requiredMessage="Campo Obrigatório" />
+									<p:inputText id="nomeTrajeto"
+										value="#{OfertarCarona.nomeTrajeto}" required="true"
+										requiredMessage="Campo Obrigatório" />
 									<p:message for="nomeTrajeto" />
 								</h:panelGrid>
 								<br />
-								<h:panelGrid id="gridPontos" columns="6">
-									<h:outputLabel value="Pontos: "></h:outputLabel>
+								<h:panelGrid id="gridPontos" columns="5">
 									<p:outputLabel value="Logradouro:" />
-									<p:inputText id="logradouro" value="#{cadCarona.logradouro}" />
+									<p:inputText id="logradouro"
+										value="#{OfertarCarona.logradouro}" />
 									<p:outputLabel value="em frente" />
-									<p:inputText id="referencia" value="#{cadCarona.referencia}" />
+									<p:inputText id="referencia"
+										value="#{OfertarCarona.referencia}" />
 									<p:commandButton id="adicionar" icon="ui-icon-plusthick"
-										action="#{cadCarona.addPontos}"
-										rendered="#{cadCarona.addPontos}" update="@form" />
+										action="#{OfertarCarona.addPontos}"
+										rendered="#{OfertarCarona.addPontos}" update="@form" />
 								</h:panelGrid>
+								<br />
 								<h:panelGrid id="gridTable" columns="1">
 									<p:dataTable id="tbPontos" var="ponto"
-										value="#{cadCarona.listPontos}"
-										rendered="#{cadCarona.listPontos != null}"
+										value="#{OfertarCarona.listPontos}"
+										rendered="#{OfertarCarona.listPontos != null}"
 										emptyMessage="Nenhum Ponto cadastrado."
 										resizableColumns="true">
 
@@ -51,37 +57,46 @@
 										<p:column headerText="Referência">
 											<h:outputText value="#{ponto.referencia}" />
 										</p:column>
-
 									</p:dataTable>
 								</h:panelGrid>
-							</p:panel>
-						</p:tab>
-						<p:tab id="carona" title="Carona">
-							<p:panel header="Oferta Carona">
-								<p:messages />
-								<h:panelGrid columns="4">
-									<p:outputLabel for="vagas" value="Vagas: " />
+							</div>
+							<div class="tab-pane" id="tab2">
+								<h:panelGrid id="gridqntVagas" columns="2">
+									<p:outputLabel for="vagas" value="Quantidade de Vagas: " />
 									<p:selectOneMenu id="vagas"
-										value="#{cadCarona.quantidadeVagas}" style="width:125px">
-										<f:selectItem itemLabel="Selecione a Quantidade vagas"
-											itemValue="" noSelectionOption="true" />
+										value="#{OfertarCarona.quantidadeVagas}" style="width:125px">
+										<f:selectItem itemLabel="Selecione" itemValue=""
+											noSelectionOption="true" />
 										<f:selectItem itemLabel="1" itemValue="1" />
 										<f:selectItem itemLabel="2" itemValue="2" />
 										<f:selectItem itemLabel="3" itemValue="3" />
 										<f:selectItem itemLabel="4" itemValue="4" />
 									</p:selectOneMenu>
+									</h:panelGrid>
+									<br />
+									<h:panelGrid id="gridData" columns="2">
 									<p:outputLabel for="datetime" value="Data e hora: " />
-									<p:calendar id="datetime" value="#{cadCarona.dataCarona}"
+									<p:calendar id="datetime" value="#{OfertarCarona.dataCarona}"
 										pattern="dd/MM/yyyy HH:mm">
 										<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
 									</p:calendar>
-								</h:panelGrid>
-								<p:commandButton value="Oferta Carona" id="ofertaCarona"
-									action="#{cadCarona.salvar}" />
-							</p:panel>
-						</p:tab>
-					</p:wizard>
-				</h:panelGrid>
+									</h:panelGrid>
+									<br />
+									<h:panelGrid id="gridButton" columns="1">
+									<p:commandButton value="Oferta Carona" id="ofertaCarona"
+										action="#{OfertarCarona.salva}" />
+										</h:panelGrid>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+					$(".nav-tabs a").click(function() {
+						$(document).ready(function() {
+							$(this).tab('show');
+						});
+					});
+				</script>
 			</f:validateBean>
 		</h:form>
 	</ui:define>

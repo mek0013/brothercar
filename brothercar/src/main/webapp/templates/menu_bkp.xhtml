@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view>
+	<h:form>
+		<h:panelGroup id="menu">
+			<p:menubar>
+				<p:menuitem value="Ofertar Carona"
+						action="#{cadCarona.preparaOferta}"/>
+				<p:menuitem value="Solicitar Carona"
+						action="#{pedirCarona.preparaPedir}" />
+				<p:submenu label="Acompanhar">
+					<p:menuitem value="Acompanha Oferta"
+						action="#{acomOferta.preparaAcompanhaOferta}" />
+					<p:menuitem value="Acompanha Pedidos"
+						action="#{acomPedido.preparaAcompanhaPedido}" />
+				</p:submenu>
+				<f:facet name="options">
+				<p:submenu label="Meu Cadastro" >
+					<p:menuitem value="Altera Cadastro"
+						action="#{principal.preparaAtualizarUser}" />
+						<p:menuitem value="Sair"
+						action="#{segurancaTO.logout}" />
+				</p:submenu>
+				</f:facet>
+			</p:menubar>
+		</h:panelGroup>
+	</h:form>
+</f:view>
+</html>

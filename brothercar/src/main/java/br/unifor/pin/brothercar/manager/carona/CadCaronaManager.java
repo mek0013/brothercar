@@ -20,8 +20,8 @@ import br.unifor.pin.brothercar.utils.MessagesUtils;
 import br.unifor.pin.brothercar.utils.Navigation;
 
 @RequestScoped
-@Component(value = "cadCarona")
-@ManagedBean(name = "cadCarona")
+@Component(value = "OfertarCarona")
+@ManagedBean(name = "OfertarCarona")
 public class CadCaronaManager {
 
 	@Autowired
@@ -38,7 +38,7 @@ public class CadCaronaManager {
 	private Date dataCarona;
 	private boolean addPontos = true;
 
-	public String salvar() {
+	public String salva() {
 		Caronas carona = new Caronas();
 		Ofertas oferta = new Ofertas();
 		carona.setNomeTrajeto(nomeTrajeto);

@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #b3b3b3;
+	background-color: #ebebeb;
 	font-family: Arial, sans-serif;
 	font-size: 10px;
 }
@@ -12,12 +12,51 @@ a {
 
 #header {
 	height: 120px;
-	border-bottom: 2px solid #008000;
-	background: #ffffff;
+	border-bottom: 3px solid #004d00;
+	background: #004d00;
 	text-align: center;
-	color: #1a1a1a;
+	color: #f0f0f0;
 	margin: 0;
 	padding: 0;
+}
+
+#content-login {
+	min-height: 320px;
+	font-size: 120%;
+	width: 100%;
+	color: #FFF;
+	background: #1f2c3c;
+	margin-left: 0 auto;
+	margin-right: 20px !important;
+}
+
+#footer {
+	text-align: center;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #004d00;
+	clear: both;
+	background-color: #004d00;
+	font-size: 15px;
+}
+
+#footer-login {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	height: 60px;
+	color: #FFF;
+	background: #1f2c3c;
+	border-top: 1px solid #c0c0c0;
+	clear: both;
+}
+
+#footer h1 {
+	line-height: 115px;
+	font-size: 44px;
+	letter-spacing: -2px;
+	margin-top: 0;
 }
 
 #header h1 {
@@ -25,7 +64,43 @@ a {
 	font-size: 66px;
 	letter-spacing: -2px;
 	margin-top: 0;
-	text-shadow: #000 2px 3px 2px;
+	color: #ffffff;
+	text-shadow: #4d4d4d 2px 3px 2px;
+}
+
+.header-template {
+	width: 120px;
+	padding: 0px;
+	margin-top: -20px;
+	margin-bottom: 0px;
+}
+
+.header-datatable {
+	display: inline-block;
+	font-weight: 100;
+	font-style: normal;
+}
+
+.image-button {
+	margin-right: 5px;
+}
+
+.ui-widget {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ui-corner-all {
+	border-radius: 4px;
+}
+
+.ui-widget-content {
+	border: 1px solid #DDD;
+	/* background: #FFF none repeat scroll 0% 0% ; */
+	color: #333;
+}
+
+.ui-state-highlight {
+	background-image: linear-gradient(to bottom, #DDDDDD, #000);
 }
 
 .ui-selectonemenu {
@@ -42,7 +117,7 @@ a {
 }
 
 .ui-widget-header {
-	background-color: #dddddd !important;
+	background-color: #ddd !important;
 }
 
 .ui-shadow {
@@ -51,7 +126,7 @@ a {
 }
 
 #header a {
-	color: #009900;
+	color: #8dff1a;
 }
 
 #footer a {
@@ -70,6 +145,39 @@ a {
 	overflow: hidden;
 	margin-top: 10px;
 	a0a0a0;
+}
+
+.bootstrap-menu {
+	background-color: #f2f2f2;
+	font-size: 20px;
+}
+
+.navbar-collapse {
+	padding-left: 5px !important;
+}
+
+.tab-content {
+	padding: 5px;
+	border-right: solid 1px #f2f2f2;
+	border-bottom: solid 1px #f2f2f2;
+	border-left: solid 1px #f2f2f2;
+	border-top: solid 1px #f2f2f2;
+}
+
+.nav-pills {
+	padding-top: 20px;
+}
+
+.nav-pills>li>a {
+	font-size: 15px;
+	color: #004d00;
+	border-radius: 5px 5px 0 0;
+	padding: 10px;
+}
+
+.nav-pills>li>a:hover {
+	background-color: #8dff1a;
+	color: #004d00;
 }
 
 #sidebar {
@@ -100,6 +208,12 @@ a {
 	padding: 8px;
 }
 
+#container-login {
+	padding: 8px;
+	/* color: #FFF; */
+	background: #FFF;
+}
+
 #content {
 	min-height: 320px;
 	font-size: 120%;
@@ -108,19 +222,17 @@ a {
 	margin-right: 20px !important;
 }
 
-#content h2 {
-	text-align: center
+#content-login {
+	min-height: 320px;
+	font-size: 120%;
+	width: 100%;
+	background: margin-left: 0 auto;
+	margin-right: 20px !important;
 }
 
-#footer {
-	text-align: center;
-	height: 40px;
-	margin: 0;
-	padding: 0;
-	border-top: 1px solid #c0c0c0;
-	clear: both;
-	background-color: #009900;
-	font-size: 15px;
+#content h2 {
+	margin-top: 0 auto;
+	text-align: center
 }
 
 .panel {
@@ -150,27 +262,40 @@ a {
 }
 
 .panelgrid {
-	margin: 5 auto;
-}
-
-.panelgridloginbutton {
-	margin-top: 15px;
-    margin-bottom: 0px;
-    margin-right: 340px;
-    margin-left: 340px;
+	margin: 0 auto;
+	padding: 8px;
 }
 
 .panelgridlogin {
 	margin-top: 100px;
-    margin-bottom: 15px;
-    margin-right: 340px;
-    margin-left: 340px;
+	margin-bottom: 0px;
+	margin-right: 340px;
+	margin-left: 340px;
 }
 
 .panelgrid input[type=text], .panelgrid input[type=password] {
 	padding: 4px;
 	margin-bottom: 1px;
-	width: 195px;
+	width: 200px;
+}
+
+.panel-default>.panel-heading {
+	color: #333;
+	background-color: #f5f5f5;
+	border-color: #ddd;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
+
+.ui-panelgrid-cell-agendamento {
+	width: 50%
+}
+
+.panelgridloginbutton {
+	margin-top: 15px;
+	margin-bottom: 0px;
+	margin-right: 340px;
+	margin-left: 340px;
 }
 
 .ui-dialog-content input {
@@ -197,14 +322,17 @@ a {
 	border: 1px solid #f0f0f0;
 }
 
-.dataTable td {
+.dataTable tr, .dataTable td {
 	border: 1px solid #d0d0d0;
-	padding: 4px;
 }
 
 .caption {
 	float: left;
 	width: 100px;
+}
+
+.noGridBorder tr, .noGridBorder td {
+	border: none !important
 }
 
 .formCaption {
@@ -225,3 +353,122 @@ a {
 .property {
 	margin-bottom: 12px;
 }
+
+.required {
+	position: relative;
+}
+
+h4.required {
+	display: inline-block;
+}
+
+.required:after {
+	content: "*" !important;
+	color: #f00;
+	font-weight: bold;
+}
+
+.required:before {
+	content: "Obrigat\00f3rio";
+	font-size: 7pt;
+	position: absolute;
+	top: -2px;
+	right: -50px;
+	text-align: center;
+	color: #f00;
+	background-color: #F9F0D9;
+	padding: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0.5px 0.5px 0.5px 0.5px darksalmon;
+	box-shadow: 0.5px 0.5px 0.5px 0.5px darksalmon;
+	visibility: hidden;
+	z-index: 98;
+}
+
+.required:hover:before {
+	visibility: visible;
+}
+
+/*
+*	TIPOS GENÉRICOS
+* -----------------------------------------------------------------------------*/
+.italic {
+	font-style: italic;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.bold {
+	font-weight: bold !important;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.textleft {
+	text-align: left;
+}
+
+.textJustify {
+	text-align: justify;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.textRight {
+	text-align: right;
+}
+
+.width100 {
+	width: 100% !important;
+}
+
+.width80 {
+	width: 80% !important;
+}
+
+.width70 {
+	width: 70% !important;
+}
+
+.width60 {
+	width: 60% !important;
+}
+
+.width50 {
+	width: 50% !important;
+}
+
+.width30 {
+	width: 30% !important;
+}
+
+.width20 {
+	width: 20% !important;
+}
+
+.width10 {
+	width: 10% !important;
+}
+
+.div-center {
+	margin: 0 auto;
+}
+
+.vertical-line {
+	border-left: 1px solid #dfdfdf;
+}
+
+.center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*-----------------------------------------------------------------------------*/

@@ -11,6 +11,7 @@ import br.unifor.pin.brothercar.aspectj.Loggable;
 import br.unifor.pin.brothercar.dao.PedidosDAO;
 import br.unifor.pin.brothercar.entity.Ofertas;
 import br.unifor.pin.brothercar.entity.Pedidos;
+import br.unifor.pin.brothercar.exceptions.BOException;
 import br.unifor.pin.brothercar.to.SegurancaTO;
 
 @Loggable
@@ -40,5 +41,15 @@ public class PedidosBO {
 	
 	public List<Pedidos> listarPorUsuario() {
 		return pedidosDAO.listarPorUsuario(segurancaTO.getUsuario());
+	}
+	
+	public void confirmaPedido(Pedidos pedido) throws BOException {
+		pedido.setStatusDoPedido(true);
+		pedidosDAO.atualizar(pedido);
+	}
+	
+	public void recusarPedido(Pedidos pedido) throws BOException {
+		pedido.setStatusDoPedido(false);
+		pedidosDAO.atualizar(pedido);
 	}
 }

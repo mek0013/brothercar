@@ -13,6 +13,8 @@ import br.unifor.pin.brothercar.bussines.OfertasBO;
 import br.unifor.pin.brothercar.bussines.PedidosBO;
 import br.unifor.pin.brothercar.entity.Ofertas;
 import br.unifor.pin.brothercar.entity.Pedidos;
+import br.unifor.pin.brothercar.exceptions.BOException;
+import br.unifor.pin.brothercar.utils.MessagesUtils;
 import br.unifor.pin.brothercar.utils.Navigation;
 
 
@@ -38,6 +40,30 @@ public class AcompanhaOfertaManager {
 			this.pedidos.add(pedidosBO.listaPorOferta(oferta));
 		}
 		return Navigation.ACOMPANHA_OFERTA;
+	}
+	
+	public String aceitar(Pedidos pedido) {
+		try {
+			pedidosBO.confirmaPedido(pedido);;
+		} catch (BOException e) {
+			MessagesUtils.error(e.getMessage());
+			return Navigation.FRACASSO;
+		}
+		MessagesUtils.info("Pedido Aceito!");
+		
+		return Navigation.SUCESSO;
+	}
+	
+	public String recusar(Pedidos pedido) {
+		try {
+			pedidosBO.confirmaPedido(pedido);;
+		} catch (BOException e) {
+			MessagesUtils.error(e.getMessage());
+			return Navigation.FRACASSO;
+		}
+		MessagesUtils.info("Pedido não foi aceito!");
+		
+		return Navigation.SUCESSO;
 	}
 
 	public List<Pedidos> getPedidos() {
