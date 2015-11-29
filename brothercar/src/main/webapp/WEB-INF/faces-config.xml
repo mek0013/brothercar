@@ -64,6 +64,18 @@
 			<to-view-id>/pages/principal/principal.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/usuario/atualizaUsuario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/pages/login/login.xhtm</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>fracasso</from-outcome>
+			<to-view-id>/pages/principal/principal.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 	<navigation-rule>
 		<from-view-id>/pages/usuario/cadUsuario.xhtml</from-view-id>

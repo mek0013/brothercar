@@ -35,6 +35,7 @@ public class AcompanhaOfertaManager {
 		this.setOfertas(new ArrayList<Ofertas>());
 		this.setPedidos(new ArrayList<Pedidos>());
 		
+		ofertasBO.atualizarOferta();
 		this.ofertas = ofertasBO.listarOfertasDoUsuario();
 		for (Ofertas oferta : ofertas) {
 			this.pedidos.add(pedidosBO.listaPorOferta(oferta));
@@ -44,7 +45,10 @@ public class AcompanhaOfertaManager {
 	
 	public String aceitar(Pedidos pedido) {
 		try {
-			pedidosBO.confirmaPedido(pedido);;
+			Ofertas oferta = pedido.getOfertas();
+			oferta.setQuantidadeVagas(oferta.getQuantidadeVagas()-1);
+			ofertasBO.atualizar(oferta);
+			pedidosBO.confirmaPedido(pedido);
 		} catch (BOException e) {
 			MessagesUtils.error(e.getMessage());
 			return Navigation.FRACASSO;

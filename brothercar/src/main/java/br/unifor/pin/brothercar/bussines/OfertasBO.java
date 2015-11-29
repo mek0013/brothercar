@@ -26,11 +26,23 @@ public class OfertasBO {
 		ofertasDAO.salvar(oferta);
 	}
 	
+	public void atualizarOferta() {
+		List<Ofertas> ofertas = ofertasDAO.listaPorQuantidade();
+		for (Ofertas oferta : ofertas) {
+			oferta.setStatus(false);
+			ofertasDAO.atualizar(oferta);
+		}
+	}
+	
 	public List<Ofertas> listarOfertasPorUsuario() {
 		return ofertasDAO.listarPorCarona(segurancaTO.getUsuario());
 	}
 	
 	public List<Ofertas> listarOfertasDoUsuario() {
 		return ofertasDAO.listaPorUsuario(segurancaTO.getUsuario());
+	}
+	
+	public void atualizar(Ofertas oferta) {
+		ofertasDAO.atualizar(oferta);
 	}
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import br.unifor.pin.brothercar.bussines.UsuarioBO;
 import br.unifor.pin.brothercar.entity.Usuarios;
+import br.unifor.pin.brothercar.exceptions.BOException;
 import br.unifor.pin.brothercar.to.SegurancaTO;
 import br.unifor.pin.brothercar.utils.Encripta;
 import br.unifor.pin.brothercar.utils.MessagesUtils;
@@ -24,26 +25,35 @@ public class AtualizaUsuarioManager {
 	@Autowired
 	private UsuarioBO usuarioBO;
 	private Usuarios usuarioAtual;
+	
 	@Autowired
 	private SegurancaTO segurancaTO;
 
 	public String atualizar() {
+		usuarioAtual.setSenha(Encripta.encripta(usuarioAtual.getSenha()));
 		usuarioBO.atualizar(usuarioAtual);
 		MessagesUtils.info("Usuário atualizado com sucesso!");
 
 		return Navigation.SUCESSO;
 	}
 
-	public void preparaAtualizar(Usuarios usuarios) {
+	public String preparaAtualizar() {
 		
-		usuarioAtual = usuarios;
+		usuarioAtual = this.segurancaTO.getUsuario();
+		
+		return Navigation.ATUALIZA;
 		
 	}
 	
 	public String excluir() {
-		this.usuarioBO.excluir(usuarioAtual);
+		try {
+			usuarioBO.excluir(usuarioAtual);
+			return Navigation.EXCLUIR;
+		} catch (BOException e) {
+			MessagesUtils.info("Erro ao excluir");
+			return Navigation.FRACASSO;
+		}
 		
-		return Navigation.EXCLUIR;
 	}
 	
 	public void limparDados(){

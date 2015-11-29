@@ -73,13 +73,14 @@ public class UsuarioBO {
 	}
 
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	public void excluir(Usuarios usuario) {
+	public void excluir(Usuarios usuario) throws BOException{
 		try {
-			usuario = usuarioDAO.buscaPorId(usuario.getId());
-		} catch (DAOException e) {
+			usuario.setAtivo(false);
+			usuarioDAO.atualizar(usuario);
+		} catch (Exception e) {
 			e.printStackTrace();
+			throw new BOException("Não foi possível excluir sua conta.");
 		}
-		usuarioDAO.excluir(usuario);
 	}
 	
 

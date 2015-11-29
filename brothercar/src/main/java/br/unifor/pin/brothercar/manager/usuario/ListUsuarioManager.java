@@ -31,10 +31,10 @@ public class ListUsuarioManager {
 		
 	}
 	
-	public void excluir(Usuarios usuario){
+	/*public void excluir(Usuarios usuario){
 		usuarioBO.excluir(usuario);
 		usuarios = usuarioBO.listaUsuarioPorNome(nome);
-	}
+	}*/
 	
 	public String preparaAtualizar(Usuarios usuario){
 		System.out.println(usuario.getNome());

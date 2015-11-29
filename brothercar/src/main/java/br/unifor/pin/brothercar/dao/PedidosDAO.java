@@ -54,7 +54,7 @@ public class PedidosDAO {
 	}
 	
 	public List<Pedidos> listarPorUsuario(Usuarios usuario){
-		String jpql = "select p from Pedidos p where p.usuario = :usuario";
+		String jpql = "select p from Pedidos p where p.usuario = :usuario and p.usuario.ativo = true";
 		TypedQuery<Pedidos> query = entityManager.createQuery(jpql,Pedidos.class);
 		query.setParameter("usuario", usuario);
 		

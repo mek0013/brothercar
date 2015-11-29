@@ -28,12 +28,6 @@ public class PrincipalManager {
 		return Navigation.CADASTRO;
 	}
 	
-	public String preparaAtualizarUser() {
-
-		this.atualizaUser.preparaAtualizar(this.segurancaTO.getUsuario());
-
-		return Navigation.ATUALIZA;
-	}
 	
 	public String preparaOferta() {
 		return Navigation.OFERTA;

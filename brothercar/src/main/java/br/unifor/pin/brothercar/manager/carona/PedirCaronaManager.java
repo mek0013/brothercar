@@ -30,6 +30,7 @@ public class PedirCaronaManager {
     private List<Ofertas> filteredOfertas;
     
     public String preparaPedir(){
+    	ofertasBO.atualizarOferta();
     	this.ofertas = ofertasBO.listarOfertasPorUsuario();
 		return Navigation.PEDIR;
 	}
