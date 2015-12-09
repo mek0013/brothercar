@@ -49,4 +49,21 @@ public class CaronasDAO {
 		return query.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Caronas> listaPorUsuario(Usuarios usuario) {
+		String jpql = "select c from Caronas c where c.usuario = :usuarios";
+		Query query = entityManager.createQuery(jpql,Caronas.class);
+		query.setParameter("usuarios", usuario);
+		
+		try {
+			return query.getResultList();
+		} catch(NoResultException e){
+			return null;
+		} 
+	}
+	
+	public Caronas buscar(Integer id) {
+		return entityManager.find(Caronas.class, id);
+	}
+	
 }

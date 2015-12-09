@@ -20,33 +20,26 @@ import br.unifor.pin.brothercar.utils.MessagesUtils;
 import br.unifor.pin.brothercar.utils.Navigation;
 
 @RequestScoped
-@Component(value = "OfertarCarona")
-@ManagedBean(name = "OfertarCarona")
+@Component(value = "cadCarona")
+@ManagedBean(name = "cadCarona")
 public class CadCaronaManager {
 
 	@Autowired
 	private CaronasBO caronasBO;
-	@Autowired
-	private SegurancaTO segurancaTO;
 
 	private List<PontoParada> listPontos;
 	private PontoParada pontoParada;
 	private String nomeTrajeto;
 	private String logradouro;
 	private String referencia;
-	private Integer quantidadeVagas;
-	private Date dataCarona;
 	private boolean addPontos = true;
 
 	public String salva() {
 		Caronas carona = new Caronas();
-		Ofertas oferta = new Ofertas();
 		carona.setNomeTrajeto(nomeTrajeto);
-		oferta.setDataHoraDeSaida(dataCarona);
-		oferta.setQuantidadeVagas(quantidadeVagas);
 
 		try {
-			caronasBO.salvarCarona(carona,listPontos,oferta);
+			caronasBO.salvarCarona(carona,listPontos);
 			MessagesUtils.info("Carona salva com sucesso!");
 		} catch (BOException e) {
 			MessagesUtils.error(e.getMessage());
@@ -56,9 +49,9 @@ public class CadCaronaManager {
 		return Navigation.SUCESSO;
 	}
 
-	public String preparaOferta() {
+	public String preparaCadastro() {
 		listPontos = new ArrayList<PontoParada>();
-		return Navigation.OFERTA;
+		return Navigation.CADASTRO_CARONA;
 	}
 
 	public void addPontos() {
@@ -78,6 +71,11 @@ public class CadCaronaManager {
 				addPontos = true;
 			}
 			limparDados();
+	}
+	
+	public void removerPontos(PontoParada ponto) {
+		this.listPontos.remove(ponto);
+		
 	}
 
 	private void limparDados() {
@@ -124,22 +122,6 @@ public class CadCaronaManager {
 
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
-	}
-
-	public Integer getQuantidadeVagas() {
-		return quantidadeVagas;
-	}
-
-	public void setQuantidadeVagas(Integer quantidadeVagas) {
-		this.quantidadeVagas = quantidadeVagas;
-	}
-
-	public Date getDataCarona() {
-		return dataCarona;
-	}
-
-	public void setDataCarona(Date dataCarona) {
-		this.dataCarona = dataCarona;
 	}
 
 	public boolean isAddPontos() {

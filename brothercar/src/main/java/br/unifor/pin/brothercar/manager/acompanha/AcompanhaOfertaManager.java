@@ -32,8 +32,8 @@ public class AcompanhaOfertaManager {
 	private List<Ofertas> ofertas;
 	
 	public String preparaAcompanhaOferta() {
-		this.setOfertas(new ArrayList<Ofertas>());
-		this.setPedidos(new ArrayList<Pedidos>());
+		this.ofertas = new ArrayList<Ofertas>();
+		this.pedidos = new ArrayList<Pedidos>();
 		
 		ofertasBO.atualizarOferta();
 		this.ofertas = ofertasBO.listarOfertasDoUsuario();
@@ -60,7 +60,7 @@ public class AcompanhaOfertaManager {
 	
 	public String recusar(Pedidos pedido) {
 		try {
-			pedidosBO.confirmaPedido(pedido);;
+			pedidosBO.recusarPedido(pedido);
 		} catch (BOException e) {
 			MessagesUtils.error(e.getMessage());
 			return Navigation.FRACASSO;

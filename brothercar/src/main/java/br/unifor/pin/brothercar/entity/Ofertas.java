@@ -27,7 +27,7 @@ public class Ofertas {
 	private Integer id;
 	
 	@Column(nullable=false)
-	private boolean status;
+	private String statusOferta;
 	
 	@Column(name = "data_hora_saida")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -44,14 +44,12 @@ public class Ofertas {
 		return id;
 	}
 
-
-	public boolean isStatus() {
-		return status;
+	public String getStatusOferta() {
+		return statusOferta;
 	}
 
-
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setStatusOferta(String statusOferta) {
+		this.statusOferta = statusOferta;
 	}
 
 	public Caronas getCarona() {
@@ -108,13 +106,14 @@ public class Ofertas {
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Ofertas [id=" + id + ", status=" + status
-				+ ", dataHoraDeSaida=" + dataHoraDeSaida + ", quantidadeVagas="
-				+ quantidadeVagas + ", carona=" + carona + "]";
+		return "Ofertas [id=" + id + ", statusOferta=" + statusOferta + ", dataHoraDeSaida=" + dataHoraDeSaida
+				+ ", quantidadeVagas=" + quantidadeVagas + "]";
 	}
+
+
+	
 
 
 	

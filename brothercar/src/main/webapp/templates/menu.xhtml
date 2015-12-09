@@ -14,15 +14,23 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<h:panelGroup>
-					<li><h:commandLink value="Oferta Carona"
-							action="#{OfertarCarona.preparaOferta}" ajax="false" /></li>
+					<li class="dropdown"><a onmouseover="this.click()"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Ofertar<span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><h:commandLink value="Cadastra Trajeto"
+									action="#{cadCarona.preparaCadastro}" ajax="false" /></li>
+							<li><h:commandLink value="Oferta Carona"
+									action="#{ofertarCarona.preparaOferta}" ajax="false" /></li>
+						</ul></li>
 					<li><h:commandLink value="Solicitar Carona"
 							action="#{pedirCarona.preparaPedir}" ajax="false" /></li>
 				</h:panelGroup>
 				<h:panelGroup>
 					<li class="dropdown"><a onmouseover="this.click()"
 						class="dropdown-toggle" data-toggle="dropdown" role="button"
-						aria-haspopup="true" aria-expanded="false">Acompanhar <span
+						aria-haspopup="true" aria-expanded="false">Acompanhar<span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><h:commandLink value="Acompanhar Oferta"

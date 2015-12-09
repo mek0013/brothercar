@@ -30,7 +30,7 @@ public class CaronasBO {
 	@Autowired
 	private SegurancaTO segurancaTO;
 	
-	public void salvarCarona(Caronas carona,List<PontoParada> pontos,Ofertas oferta) throws BOException{
+	public void salvarCarona(Caronas carona,List<PontoParada> pontos) throws BOException{
 		
 		carona.setUsuario(segurancaTO.getUsuario());
 		caronasDAO.salvar(carona);
@@ -41,14 +41,10 @@ public class CaronasBO {
 			pontoParadaBO.salvar(ponto);
 		}
 		
-		oferta.setCarona(carona);
-		ofertasBO.salvarOferta(oferta);
-		
 	}
 	
 	public List<Caronas> listarTodos() {
-		List<Caronas> caronas  = caronasDAO.listarTodos();
-		
+		List<Caronas> caronas  = caronasDAO.listaPorUsuario(segurancaTO.getUsuario());
 		return caronas;
 	}
 	

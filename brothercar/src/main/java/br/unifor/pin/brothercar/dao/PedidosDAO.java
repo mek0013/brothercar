@@ -40,8 +40,8 @@ public class PedidosDAO {
 		
 	}
 	
-	public Pedidos listarPorUsuario(Ofertas ofertas){
-		String jpql = "select p from Pedidos p where p.statusDoPedido = false and p.ofertas = :ofertas";
+	public Pedidos listarPorStatus(Ofertas ofertas){
+		String jpql = "select p from Pedidos p where p.ofertas = :ofertas and p.statusPedido != 'ACEITOR'";
 		TypedQuery<Pedidos> query = entityManager.createQuery(jpql,Pedidos.class);
 		query.setParameter("ofertas", ofertas);
 		

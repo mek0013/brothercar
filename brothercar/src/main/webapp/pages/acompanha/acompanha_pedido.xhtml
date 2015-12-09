@@ -31,8 +31,9 @@
 				</p:column>
 				<p:column style="width: 55px; text-align: center" resizable="false"
 					headerText="Status do pedido">
-					<h:outputText rendered="#{pedido.statusDoPedido == true}" value="Aceito" style="color: #00FF00;"/>
-					<h:outputText rendered="#{pedido.statusDoPedido == false}" value="Recuso" style="color: #FF0000"/>
+					<h:outputText rendered="#{pedido.statusPedido == 'ACEITOR'}" value="Aceito" style="color: #00FF00;"/>
+					<h:outputText rendered="#{pedido.statusPedido == 'AGUARDANDO'}" value="Aguardando" style="color: #00FF00;"/>
+					<h:outputText rendered="#{pedido.statusPedido == 'RECUSADO'}" value="Recuso" style="color: #FF0000"/>
 				</p:column>
 			</p:dataTable>
 		</h:form>

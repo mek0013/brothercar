@@ -29,14 +29,14 @@ public class PedidosBO {
 		Pedidos pedido = new Pedidos();
 		pedido.setOfertas(oferta);
 		pedido.setPontoEscolhido(pontoEscolhido);
-		pedido.setStatusDoPedido(false);
+		pedido.setStatusPedido("AGUARDANDO");
 		pedido.setUsuario(segurancaTO.getUsuario());
 		pedidosDAO.salvar(pedido);
 		
 	}
 	
 	public Pedidos listaPorOferta(Ofertas oferta) {
-		return pedidosDAO.listarPorUsuario(oferta);
+		return pedidosDAO.listarPorStatus(oferta);
 	}
 	
 	public List<Pedidos> listarPorUsuario() {
@@ -44,12 +44,12 @@ public class PedidosBO {
 	}
 	
 	public void confirmaPedido(Pedidos pedido) throws BOException {
-		pedido.setStatusDoPedido(true);
+		pedido.setStatusPedido("ACEITOR");
 		pedidosDAO.atualizar(pedido);
 	}
 	
 	public void recusarPedido(Pedidos pedido) throws BOException {
-		pedido.setStatusDoPedido(false);
+		pedido.setStatusPedido("RECUSADO");
 		pedidosDAO.atualizar(pedido);
 	}
 }

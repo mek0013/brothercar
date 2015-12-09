@@ -24,7 +24,7 @@ public class Pedidos {
 	private String pontoEscolhido;
 	
 	@Column
-	private Boolean statusDoPedido;
+	private String statusPedido;
 	
 	@ManyToOne
 	@JoinColumn(name="usuarios_id", nullable=false)
@@ -42,43 +42,30 @@ public class Pedidos {
 		return pontoEscolhido;
 	}
 
-
-
 	public void setPontoEscolhido(String pontoEscolhido) {
 		this.pontoEscolhido = pontoEscolhido;
 	}
 
-
-
-	public Boolean getStatusDoPedido() {
-		return statusDoPedido;
+	
+	public String getStatusPedido() {
+		return statusPedido;
 	}
 
-
-
-	public void setStatusDoPedido(Boolean statusDoPedido) {
-		this.statusDoPedido = statusDoPedido;
+	public void setStatusPedido(String statusPedido) {
+		this.statusPedido = statusPedido;
 	}
-
-
 
 	public Usuarios getUsuario() {
 		return usuario;
 	}
 
-
-
 	public void setUsuario(Usuarios usuario) {
 		this.usuario = usuario;
 	}
 
-
-
 	public Ofertas getOfertas() {
 		return ofertas;
 	}
-
-
 
 	public void setOfertas(Ofertas ofertas) {
 		this.ofertas = ofertas;
@@ -111,9 +98,10 @@ public class Pedidos {
 
 	@Override
 	public String toString() {
-		return "Pedidos [id=" + id + ", pontoEscolhido=" + pontoEscolhido
-				+ ", statusDoPedido=" + statusDoPedido + "]";
+		return "Pedidos [id=" + id + ", statusPedido=" + statusPedido + "]";
 	}
+
+	
 
 	
 	

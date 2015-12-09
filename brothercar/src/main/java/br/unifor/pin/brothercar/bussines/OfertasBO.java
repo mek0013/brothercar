@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import br.unifor.pin.brothercar.aspectj.Loggable;
 import br.unifor.pin.brothercar.dao.OfertasDAO;
 import br.unifor.pin.brothercar.entity.Ofertas;
+import br.unifor.pin.brothercar.exceptions.BOException;
 import br.unifor.pin.brothercar.to.SegurancaTO;
 
 
@@ -21,25 +22,25 @@ public class OfertasBO {
 	@Autowired
 	private SegurancaTO segurancaTO;
 	
-	public void salvarOferta(Ofertas oferta) {
-		oferta.setStatus(true);
+	public void salvarOferta(Ofertas oferta) throws BOException{
+		oferta.setStatusOferta("DISPONIVEL");
 		ofertasDAO.salvar(oferta);
 	}
 	
 	public void atualizarOferta() {
 		List<Ofertas> ofertas = ofertasDAO.listaPorQuantidade();
 		for (Ofertas oferta : ofertas) {
-			oferta.setStatus(false);
+			oferta.setStatusOferta("INDISPONIVEL");
 			ofertasDAO.atualizar(oferta);
 		}
 	}
 	
 	public List<Ofertas> listarOfertasPorUsuario() {
-		return ofertasDAO.listarPorCarona(segurancaTO.getUsuario());
+		return ofertasDAO.listarPorUsuario(segurancaTO.getUsuario());
 	}
 	
 	public List<Ofertas> listarOfertasDoUsuario() {
-		return ofertasDAO.listaPorUsuario(segurancaTO.getUsuario());
+		return ofertasDAO.listaDoUsuario(segurancaTO.getUsuario());
 	}
 	
 	public void atualizar(Ofertas oferta) {

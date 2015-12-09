@@ -36,8 +36,8 @@ public class OfertasDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Ofertas> listarPorCarona(Usuarios usuario){
-		String jpql = "select o from Ofertas o join o.carona c where o.status = true and c.usuario != :usuarios and c.usuario.ativo = true";
+	public List<Ofertas> listarPorUsuario(Usuarios usuario){
+		String jpql = "select o from Ofertas o join o.carona c where o.statusOferta = 'DISPONIVEL' and c.usuario != :usuarios and c.usuario.ativo = true";
 		Query query = entityManager.createQuery(jpql,Ofertas.class);
 		query.setParameter("usuarios", usuario);
 		
@@ -50,8 +50,8 @@ public class OfertasDAO {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Ofertas> listaPorUsuario(Usuarios usuario) {
-		String jpql = "select o from Ofertas o join o.carona c where o.status = true and c.usuario = :usuarios and c.usuario.ativo = true";
+	public List<Ofertas> listaDoUsuario(Usuarios usuario) {
+		String jpql = "select o from Ofertas o join o.carona c where o.statusOferta = 'DISPONIVEL' and c.usuario = :usuarios and c.usuario.ativo = true";
 		Query query = entityManager.createQuery(jpql,Ofertas.class);
 		query.setParameter("usuarios", usuario);
 		

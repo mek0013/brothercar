@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/templates/template.xhtml">
+	<ui:define name="content">
+
+		<h:form id="formOfertaCarona">
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+			<f:validateBean>
+				<h2>Cadastra Trajeto</h2>
+				<p:separator />
+				<br />
+
+				<h:panelGrid id="gridTrajetos" columns="4" styleClass="panelgrid">
+					<p:outputLabel value="Nome do Trajeto: " />
+					<font color="red">*</font>
+					<p:inputText id="nomeTrajeto" value="#{cadCarona.nomeTrajeto}"
+						required="true" requiredMessage="Campo Obrigatório" />
+					<p:message for="nomeTrajeto" />
+				</h:panelGrid>
+				<br />
+				<h:panelGrid id="gridPontos" columns="5" styleClass="panelgrid">
+					<p:outputLabel value="Logradouro:" />
+					<p:inputText id="logradouro" value="#{cadCarona.logradouro}" />
+					<p:outputLabel value="em frente" />
+					<p:inputText id="referencia" value="#{cadCarona.referencia}" />
+					<p:commandButton id="adicionar" icon="ui-icon-plusthick"
+						action="#{cadCarona.addPontos}" update="@form" />
+				</h:panelGrid>
+				<br />
+				<h:panelGrid id="gridTable" columns="1">
+					<p:dataTable id="tbPontos" var="ponto"
+						value="#{cadCarona.listPontos}"
+						rendered="#{cadCarona.listPontos != null}"
+						emptyMessage="Nenhum Ponto cadastrado." resizableColumns="true"
+						tableStyleClass="ui-table-columntoggle" reflow="true">
+
+						<p:column headerText="Logradouro">
+							<h:outputText value="#{ponto.logradouro}" />
+						</p:column>
+						<p:column headerText="Referência">
+							<h:outputText value="#{ponto.referencia}" />
+						</p:column>
+						<p:column id="clExcluir" style="width: 43px; text-align: center"
+							resizable="false" headerText="Excluir">
+							<p:commandButton id="btExcluir" icon="ui-icon-closethick"
+								title="Excluir" action="#{cadCarona.removerPontos(ponto)}"
+								update="@form" />
+						</p:column>
+					</p:dataTable>
+					<br />
+					<p:commandButton value="Cadastra Trajeto" id="cadTrajeto"
+						action="#{cadCarona.salva}" />
+				</h:panelGrid>
+			</f:validateBean>
+		</h:form>
+	</ui:define>
+</ui:composition>

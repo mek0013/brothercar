@@ -44,6 +44,10 @@
 			<to-view-id>/pages/oferta/ofertaCarona.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>cadastraCarona</from-outcome>
+			<to-view-id>/pages/oferta/cadastraTrajeto.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>acompanhaOferta</from-outcome>
 			<to-view-id>/pages/acompanha/acompanha_oferta.xhtml</to-view-id>
 		</navigation-case>

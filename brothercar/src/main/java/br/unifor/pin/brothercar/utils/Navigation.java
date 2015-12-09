@@ -16,6 +16,7 @@ public class Navigation {
 	
 	public static final String SOLICITAR = "solicitar";
 	public static final String OFERTA = "ofertar";
+	public static final String CADASTRO_CARONA = "cadastraCarona";
 	public static final String ACOMPANHA_OFERTA = "acompanhaOferta";
 	public static final String ACOMPANHA_PEDIDO = "acompanhaPedido";
 	public static final String PEDIR = "pedir";
